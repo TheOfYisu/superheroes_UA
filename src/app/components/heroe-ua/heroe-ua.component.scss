@@ -1,0 +1,26 @@
+.card {
+    padding: 30px;
+    margin: 20px;
+}
+
+.subtitle {
+    font-size: 14px;
+}
+
+
+.options {
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    display: grid;
+
+    i {
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+.photo {
+    width: 150px;
+    height: 150px;
+}
