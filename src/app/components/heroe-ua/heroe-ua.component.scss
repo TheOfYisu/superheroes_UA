@@ -1,6 +1,12 @@
 .card {
     padding: 30px;
     margin: 20px;
+    border: rgb(153, 153, 153) 1px solid;
+    border-radius: 8px;
+}
+
+.card-description {
+    text-align: justify;
 }
 
 .subtitle {

@@ -7,6 +7,7 @@ import { NewheroeUaComponent } from './components/newheroe-ua/newheroe-ua.compon
 import { EditheroeUaComponent } from './components/editheroe-ua/editheroe-ua.component';
 import { HeroeUaComponent } from './components/heroe-ua/heroe-ua.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditheroeUaComponent,
     HeroeUaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

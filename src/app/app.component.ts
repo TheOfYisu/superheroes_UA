@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SuperHeroe } from './interfaces/super-heroe';
 
 @Component({
@@ -9,6 +9,7 @@ import { SuperHeroe } from './interfaces/super-heroe';
 export class AppComponent {
   title = 'superheroes_UA';
   create: boolean = true;
+  heroe: SuperHeroe = {} as SuperHeroe;
 
   heroes: SuperHeroe[] = [
     {
@@ -30,6 +31,26 @@ export class AppComponent {
   ];
 
   editHeroe(hero: SuperHeroe): void {
-    console.log(hero);
+    this.create = false;
+    this.heroe = hero;
+  }
+
+  newHeroe(hero: SuperHeroe): void {
+    hero.id = this.heroes.length + 1;
+    this.create = true;
+    this.heroes.push(hero);
+  }
+
+  updateHeroe(hero: SuperHeroe): void {
+    this.create = true;
+    this.heroes = this.heroes.map((h) => (h.id === hero.id ? hero : h));
+  }
+
+  deleteHeroe(hero: SuperHeroe): void {
+    this.heroes = this.heroes.filter((h) => h.id !== hero.id);
+  }
+
+  cancel(): void {
+    this.create = true;
   }
 }

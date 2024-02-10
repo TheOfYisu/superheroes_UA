@@ -4,25 +4,35 @@
   <form>
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Deku" />
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="name"
+        [(ngModel)]="hero.name"
+      />
     </div>
     <div class="mb-3">
       <label for="superpower" class="form-label">Super Poder</label>
-      <input
+      <textarea
         type="text"
+        name="superpower"
         class="form-control"
         id="superpower"
-        placeholder="All for One"
-      />
+        [(ngModel)]="hero.superpower"
+      ></textarea>
     </div>
     <div class="mb-3">
       <label for="universe" class="form-label">Universo</label>
       <input
         type="text"
+        name="universe"
         class="form-control"
         id="universe"
-        placeholder="My Hero Academia"
+        [(ngModel)]="hero.universe"
       />
     </div>
+
+    <button class="btn btn-primary" (click)="createHero()">Añadir</button>
   </form>
 </div>

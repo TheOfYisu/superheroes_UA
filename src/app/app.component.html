@@ -1,18 +1,29 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-8">
+    <div class="col-lg-8 col-12">
       <div class="row">
-        <div class="col-4" *ngFor="let heroe of heroes">
+        <div class="col-lg-4 col-md-6 col-12" *ngFor="let heroe of heroes">
           <app-heroe-ua
             [hero]="heroe"
             (emitEditHero)="editHeroe($event)"
+            (emitDeleteHero)="deleteHeroe($event)"
           ></app-heroe-ua>
         </div>
       </div>
     </div>
-    <div class="col-4">
-      <app-newheroe-ua *ngIf="create"></app-newheroe-ua>
-      <app-editheroe-ua *ngIf="!create"></app-editheroe-ua>
+    <div class="col-lg-4 col-12">
+      <div class="form-heroe">
+        <app-newheroe-ua
+          (emitNewHero)="newHeroe($event)"
+          *ngIf="create"
+        ></app-newheroe-ua>
+        <app-editheroe-ua
+          [hero]="heroe"
+          (emitUpdateHero)="updateHeroe($event)"
+          (emitCancel)="cancel()"
+          *ngIf="!create"
+        ></app-editheroe-ua>
+      </div>
     </div>
   </div>
 </div>

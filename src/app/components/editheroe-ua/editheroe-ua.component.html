@@ -1,18 +1,38 @@
 <div>
-  <h2>Editar Heroe <i class="bi bi-person-add"></i></h2>
+  <h2>Editar Heroe <i class="bi bi-pencil-square"></i></h2>
 
   <form>
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" />
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="name"
+        [(ngModel)]="editHeroe.name"
+      />
     </div>
     <div class="mb-3">
       <label for="superpower" class="form-label">Super Poder</label>
-      <input type="text" class="form-control" id="superpower" />
+      <textarea
+        type="text"
+        name="superpower"
+        class="form-control"
+        id="superpower"
+        [(ngModel)]="editHeroe.superpower"
+      ></textarea>
     </div>
     <div class="mb-3">
       <label for="universe" class="form-label">Universo</label>
-      <input type="text" class="form-control" id="universe" />
+      <input
+        type="text"
+        name="universe"
+        class="form-control"
+        id="universe"
+        [(ngModel)]="editHeroe.universe"
+      />
     </div>
+    <button class="btn btn-primary" (click)="saveHeroe()">Editar</button>
+    <button class="btn btn-danger mx-3" (click)="cancel()">Cancelar</button>
   </form>
 </div>
