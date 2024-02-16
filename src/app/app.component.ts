@@ -31,6 +31,7 @@ export class AppComponent {
   ];
 
   editHeroe(hero: SuperHeroe): void {
+    console.log(hero);
     this.create = false;
     this.heroe = hero;
   }

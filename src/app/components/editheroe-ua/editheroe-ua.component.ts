@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
 import { SuperHeroe } from '../../interfaces/super-heroe';
 
 @Component({
@@ -6,7 +15,7 @@ import { SuperHeroe } from '../../interfaces/super-heroe';
   templateUrl: './editheroe-ua.component.html',
   styleUrl: './editheroe-ua.component.scss',
 })
-export class EditheroeUaComponent implements OnInit {
+export class EditheroeUaComponent implements OnChanges {
   @Input() hero: SuperHeroe = {} as SuperHeroe;
   @Output() emitUpdateHero = new EventEmitter<SuperHeroe>();
   @Output() emitCancel = new EventEmitter<boolean>();
@@ -19,8 +28,10 @@ export class EditheroeUaComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.editHeroe = { ...this.hero };
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['hero']) {
+      this.editHeroe = { ...this.hero };
+    }
   }
 
   cancel(): void {
